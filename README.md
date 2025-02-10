@@ -6,7 +6,7 @@ The CICIDS2017 dataset is a comprehensive dataset for network intrusion detectio
 
 The dataset includes various types of attacks such as Brute Force, Heartbleed, Botnet, DoS (Denial of Service), DDoS (Distributed Denial of Service), Web attacks, and Infiltration of the network from inside.
 
-**Dataset**: CIC-IDS2017. (year, date). <https://www.unb.ca/cic/datasets/ids-2017.html>
+**Dataset**: CIC-IDS2017. (2024, February 1). <https://www.unb.ca/cic/datasets/ids-2017.html>
 
 ## Repository contents
 
@@ -16,27 +16,22 @@ The dataset includes various types of attacks such as Brute Force, Heartbleed, B
 
 ## Model performance
 
+The model was trained on the CICIDS2017 dataset, however only on the data from Tuesdat
+
 ### Classification report
 
 |              | precision | recall | f1-score | support |
 | ------------ | --------- | ------ | -------- | ------- |
-| normal       | 1.00      | 0.95   | 0.97     | 12992   |
-| neptune      | 1.00      | 1.00   | 1.00     | 4043    |
-| ipsweep      | 0.97      | 0.97   | 0.97     | 706     |
-| satan        | 0.61      | 0.98   | 0.75     | 711     |
-| smurf        | 0.93      | 1.00   | 0.96     | 511     |
-| portsweep    | 0.97      | 1.00   | 0.98     | 501     |
-| nmap         | 0.88      | 0.99   | 0.93     | 312     |
-| back         | 0.88      | 1.00   | 0.94     | 179     |
-| teardrop     | 1.00      | 1.00   | 1.00     | 166     |
-| warezclient  | 0.48      | 0.99   | 0.65     | 111     |
+| BENIGN       | 1.00      | 1.00   | 1.00     | 86310   |
+| FTP-Patator  | 0.97      | 1.00   | 0.99     | 1587    |
+| SSH-Patator  | 0.86      | 0.99   | 0.92     | 1232    |
 |              |           |        |          |         |
-| accuracy     |           |        | 0.96     | 20232   |
-| macro avg    | 0.87      | 0.99   | 0.92     | 20232   |
-| weighted avg | 0.98      | 0.96   | 0.97     | 20232   |
+| accuracy     |           |        | 1.00     | 89129   |
+| macro avg    | 0.95      | 0.99   | 0.97     | 89129   |
+| weighted avg | 1.00      | 1.00   | 1.00     | 89129   |
 
-The model performs [performance], with an accuracy of **XX%**. If we look at the performance per attack type, there are some outliers:
+The model performs pretty well, with an accuracy of **99.72%**. If we look at the performance per attack type, there are some outliers:
 
-- **XX**: finding
+- **SSH-Patator**: this attack type has a lower precision of **86%**, which means that the model is not as good at identifying this attack type
 
-- **XX**: finding
+- **FTP-Patator**: this attack type has a lower recall of **97%**, which means that the model is not as good at identifying all instances of this attack type
