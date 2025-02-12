@@ -14,6 +14,7 @@ The dataset includes various types of attacks such as Brute Force, Heartbleed, B
 1. `main_tuesday.ipynb`: This Jupyter notebook contains the EDA (exploratory data analysis), preprocessing, model architecture, and model evaluation (only for Tuesday's data)
 1. `/data/`: contains the cleaned and encoded datasets, which were exported in the Jupyter notebook
 1. `/models/`: contains the trained model which was exported in the Jupyter notebook
+1. `requirements.txt`: This file contains the required Python packages to run the Jupyter notebooks
 
 ## Model performance
 
