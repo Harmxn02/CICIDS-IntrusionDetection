@@ -4,3 +4,4 @@ matplotlib
 seaborn
 scikit-learn
 imblearn
+# torch # install the CUDA version if you have an Nvidia GPU (the command is on their website, and depends on your CUDA version)
