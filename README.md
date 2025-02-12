@@ -45,7 +45,7 @@ The model performs pretty well, with an accuracy of **99.72%**. If we look at th
 
 Here, the model was trained on the CICIDS2017 dataset, using all the data
 
-#### Classification report 2: TO-DO
+#### Classification report 2
 
 |                            | precision | recall | f1-score | support |
 | -------------------------- | --------- | ------ | -------- | ------- |
@@ -74,3 +74,49 @@ The model performs okay on most attack types with an accuracy of **94.52%** and 
 ### All data (Hybrid model)
 
 Here, the model was trained on the CICIDS2017 dataset, using all the data, and a hybrid CNN-GAN model. The architecture is explained in this research paper: <https://www.jait.us/articles/2024/JAIT-V15N7-886.pdf>. The data preprocessing done here are the exact same as the ones done in the `main.ipynb` notebook. The only thing that is different is the model architecture.
+
+The research paper claims their CNN-GAN hybrid model performs better, and that is exactly what I noticed as well. During training I log the epochs and the loss and accuracy for that epoch. Here are those results:
+
+**Regular model**:
+Epoch [1/5] - Progress: 100.00% - loss: 2.0223 ; accuracy: 0.7927
+Epoch [2/5] - Progress: 100.00% - loss: 2.0092 ; accuracy: 0.8052
+Epoch [3/5] - Progress: 100.00% - loss: 2.0026 ; accuracy: 0.8119
+Epoch [4/5] - Progress: 100.00% - loss: 2.0022 ; accuracy: 0.8122
+Epoch [5/5] - Progress: 100.00% - loss: 2.0020 ; accuracy: 0.8124
+
+**Hybrid model**:
+Epoch [1/5] - Progress: 100.00% - Loss: 0.1475 - Accuracy: 0.9282
+Epoch [2/5] - Progress: 100.00% - Loss: 0.1140 - Accuracy: 0.9427
+Epoch [3/5] - Progress: 100.00% - Loss: 0.1078 - Accuracy: 0.9444
+Epoch [4/5] - Progress: 100.00% - Loss: 0.1051 - Accuracy: 0.9452
+Epoch [5/5] - Progress: 100.00% - Loss: 0.1032 - Accuracy: 0.9459
+
+This was only for 5 epochs, and the hybrid model already outperforms the regular model. The hybrid model has a higher accuracy and a lower loss. This is a clear indication that the research paper is correct in saying that their hybrid model performs better.
+
+#### Classification report 3
+
+|                            | precision | recall | f1-score | support |
+| -------------------------- | --------- | ------ | -------- | ------- |
+| BENIGN                     | 1.00      | 0.97   | 0.99     | 454208  |
+| Dos Hulk                   | 0.95      | 1.00   | 0.97     | 45782   |
+| PortScan                   | 0.90      | 1.00   | 0.95     | 31877   |
+| DDoS                       | 1.00      | 1.00   | 1.00     | 25786   |
+| DoS GoldenEye              | 0.87      | 1.00   | 0.93     | 2074    |
+| FTP-Patator                | 0.94      | 1.00   | 0.97     | 1572    |
+| SSH-Patator                | 0.57      | 1.00   | 0.73     | 1128    |
+| DoS slowloris              | 0.72      | 0.99   | 0.83     | 1166    |
+| DoS Slowhttptest           | 0.85      | 0.99   | 0.91     | 1109    |
+| Bot                        | 0.10      | 0.99   | 0.19     | 441     |
+| Web Attack � Brute Force   | 0.27      | 0.49   | 0.34     | 301     |
+| Web Attack � XSS           | 0.15      | 0.79   | 0.25     | 119     |
+| Infiltration               | 0.14      | 0.71   | 0.23     | 7       |
+| Web Attack � Sql Injection | 0.02      | 0.50   | 0.03     | 4       |
+| Heartbleed                 | 1.00      | 1.00   | 1.00     | 2       |
+|                            |           |        |          |         |
+| accuracy                   |           |        | 0.98     | 565576  |
+| macro avg                  | 0.63      | 0.90   | 0.69     | 565576  |
+| weighted avg               | 0.99      | 0.98   | 0.98     | 565576  |
+
+The hybrid model performs better than the regular model, with an accuracy of **97.75%** and an F1 score of **98.12%**. The hybrid model performs better on all attack types, except for **Bot**, **Web Attack � Brute Force**, **Web Attack � XSS**, **Infiltration**, **Web Attack � SQL Injection**, and **Heartbleed**. This is, again, likely due to the low number of samples for these attack types.
+
+I think if the hybrid model was trained for more epochs, it would perform even better. However, I only trained it for 5 epochs.
