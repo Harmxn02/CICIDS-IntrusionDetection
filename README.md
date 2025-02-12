@@ -70,3 +70,7 @@ Here, the model was trained on the CICIDS2017 dataset, using all the data
 | weighted avg               | 0.96      | 0.95   | 0.95     | 565576  |
 
 The model performs okay on most attack types with an accuracy of **94.52%** and an F1 score of **95.09%**. However, it performs horribly on a few attack types, namely: **Bot**, **Web Attack � Brute Force**, **Web Attack � XSS**, **Infiltration**, **Web Attack � SQL Injection**, and **Heartbleed**. This is likely due to the low number of samples for these attack types.
+
+### All data (Hybrid model)
+
+Here, the model was trained on the CICIDS2017 dataset, using all the data, and a hybrid CNN-GAN model. The architecture is explained in this research paper: <https://www.jait.us/articles/2024/JAIT-V15N7-886.pdf>. The data preprocessing done here are the exact same as the ones done in the `main.ipynb` notebook. The only thing that is different is the model architecture.
