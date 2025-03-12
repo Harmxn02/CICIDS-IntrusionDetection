@@ -14,7 +14,6 @@ Here you will find the notebooks for shallow models. The notebooks are organized
 | Logistic Regression          | [link](<./logistic_regression_(LR).ipynb>)           | 🟩     |
 | Principal Component Analysis | [link](<./principal_component_analysis_(PCA).ipynb>) | 🟩     |
 | K-Means Clustering           | [link](<./k-means_clustering_(KMC).ipynb>)           | 🟩     |
-| One-Class SVM                | [link](<./one-class_SVM_(OCSVM).ipynb>)              | 🟨     |
 
 🟥 = Not done
 🟨 = In progress
