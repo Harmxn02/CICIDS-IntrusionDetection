@@ -78,18 +78,20 @@ Here, the model was trained on the CICIDS2017 dataset, using all the data, and a
 The research paper claims their CNN-GAN hybrid model performs better, and that is exactly what I noticed as well. During training I log the epochs and the loss and accuracy for that epoch. Here are those results:
 
 **Regular model**:
-Epoch [1/5] - Progress: 100.00% - loss: 2.0223 ; accuracy: 0.7927
-Epoch [2/5] - Progress: 100.00% - loss: 2.0092 ; accuracy: 0.8052
-Epoch [3/5] - Progress: 100.00% - loss: 2.0026 ; accuracy: 0.8119
-Epoch [4/5] - Progress: 100.00% - loss: 2.0022 ; accuracy: 0.8122
-Epoch [5/5] - Progress: 100.00% - loss: 2.0020 ; accuracy: 0.8124
+
+- Epoch [1/5] - Progress: 100.00% - loss: 2.0223 ; accuracy: 0.7927
+- Epoch [2/5] - Progress: 100.00% - loss: 2.0092 ; accuracy: 0.8052
+- Epoch [3/5] - Progress: 100.00% - loss: 2.0026 ; accuracy: 0.8119
+- Epoch [4/5] - Progress: 100.00% - loss: 2.0022 ; accuracy: 0.8122
+- Epoch [5/5] - Progress: 100.00% - loss: 2.0020 ; accuracy: 0.8124
 
 **Hybrid model**:
-Epoch [1/5] - Progress: 100.00% - Loss: 0.1475 - Accuracy: 0.9282
-Epoch [2/5] - Progress: 100.00% - Loss: 0.1140 - Accuracy: 0.9427
-Epoch [3/5] - Progress: 100.00% - Loss: 0.1078 - Accuracy: 0.9444
-Epoch [4/5] - Progress: 100.00% - Loss: 0.1051 - Accuracy: 0.9452
-Epoch [5/5] - Progress: 100.00% - Loss: 0.1032 - Accuracy: 0.9459
+
+- Epoch [1/5] - Progress: 100.00% - Loss: 0.1475 - Accuracy: 0.9282
+- Epoch [2/5] - Progress: 100.00% - Loss: 0.1140 - Accuracy: 0.9427
+- Epoch [3/5] - Progress: 100.00% - Loss: 0.1078 - Accuracy: 0.9444
+- Epoch [4/5] - Progress: 100.00% - Loss: 0.1051 - Accuracy: 0.9452
+- Epoch [5/5] - Progress: 100.00% - Loss: 0.1032 - Accuracy: 0.9459
 
 This was only for 5 epochs, and the hybrid model already outperforms the regular model. The hybrid model has a higher accuracy and a lower loss. This is a clear indication that the research paper is correct in saying that their hybrid model performs better.
 
